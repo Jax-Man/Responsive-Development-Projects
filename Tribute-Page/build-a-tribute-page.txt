@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Limbus Company Dante and his Powers</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="tribute to Dante and his powers" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header></header>
+    <main id="main">
+     <section class="title-card" id="title">
+      <h1 class="center title">Dante</h1>
+      <h2 class="center title">The Sinner's Jailer</h2>
+     </section>
+     <div id="divider" class="divider"></div>
+     <figure id="img-div" class="img-div">
+      <img id="image" class="image" src="https://limbuscompany.wiki.gg/images/thumb/9/9f/S438_2.png/800px-S438_2.png" alt="dante sitting alone on the bus">
+       <figcaption id="img-caption" class="center">Dante on his "bus" showing his... unique head replacement
+     </figcaption>
+    </figure>
+    <section id="tribute-info">
+      <h2 class="center">This will be a chronological list of his powers used in Limbus Company™</h2>
+      <h3 class="center label">Selva Oscura (Prologue)</h3>
+      
+      <ul Class="list">
+        <li class="list-date">Episode 0-1 (Pre Battle): The ability to replace his head with something akin to a doomsday clock(?) after decapitation (kinda cracked ngl)</li>
+        <li class="list-date">Episode 0-1 (Pre Battle): Chains erupt from his heart through his new head and bind to 12 sinners </li>
+        <li class="list-date">Episode 0-1 (Pre Battle): Able to telepathically communicate with the sinners</li>
+        <li class="list-date">Episode 0-1 (Post Battle): Uses the ability to bring his sinners back from the dead</li>
+        <li class="list-date">Episode 0-4(Pre Battle): Explains his ability to bring out "reflections" of the sinners possible lives. Increasing their combat prowess by a large margin</li>
+      </ul>
+      <h3 class="center label">The Outcast (Canto I)</h3> 
+      <ul class="list">
+        <li class="list-date">Episode 1-1: Showcases what the price is to bring sinners back from the dead. </li>
+        <!-- ADD: picture of hellgate -->
+        <li class="list-date"></li>
+      </ul>
+    </section>
+    <section class="footnote">
+      <p>To read up on Dante and the Project moon game click <a id="tribute-link" class="tribute-link" target="_blank" href="https://limbuscompany.wiki.gg/wiki/Dante">here.</a></p>
+      <p>For the Steam page of Limbus Company click <a class="tribute-link"  id="tribute-link" target="_blank" href="https://store.steampowered.com/app/1973530/Limbus_Company/">this link.</a>
+      </p>
+
+    </section>
+    </main>
+  </body>
+</html>
+
+
