@@ -1,0 +1,129 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.main-section {
+  scroll-margin-top: 50px;
+}
+
+body {
+height: 500vh;
+}
+
+
+.navigation {
+  border-right: 3px solid grey;
+  position: fixed;
+  left: 0; 
+  top: 0;
+  min-width: 250px;
+  width: 15vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: block;
+  align-items: center;
+  overflow: auto;
+}
+
+.navigation *:not(a) {
+  border-bottom: 1px solid grey;
+  Text-align: left;
+  padding: 10px 30px;
+  margin: 10px;
+  font-size:1.10em;
+  display: block;
+  }
+
+.navigation a {
+  display: block;
+  border: none;
+  text-decoration: none;
+  color: black;
+  padding: 4px auto;
+}
+
+.navigation header {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  
+}
+
+.navigation li {
+  list-style-type: none;
+  display: block;
+}
+
+.navigation ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border: none;
+}
+
+#main-doc {
+  float: left;
+  padding-left: clamp(275px, 20vw, 350px); /*This left padding is to offset the content from overlapping the nav bar*/
+  margin-top: 50px;
+  line-height: 2em;
+}
+
+#main-doc p, #main-doc ul {
+  font-size: 1.2em;
+}
+
+#main-doc header {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+#main-doc p {
+  margin-left: 20px;
+}
+
+#main-doc ul {
+  margin-left: 35px;
+}
+
+ul[id="main-list"] li {
+  line-height: 2em;
+}
+
+/* Section is for rules that apply to mobile devices for readability */
+
+@media (max-width: 720px) {
+  .navigation {
+    position: absolute;
+    min-width: 100vw;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .nav-list {
+    height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: solid 2px grey !important; 
+    max-height: 200px;
+  }
+
+  #navbar header {
+    display: block;
+    font-size: 2.5em;
+    border: none;
+    margin: 0;
+  }
+
+  body {
+   margin-top: 275px;
+  }
+
+  #main-doc {
+    padding-left: 0;
+  }
+
+  .section-header {
+    text-align: center;
+  }
+}
