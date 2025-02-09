@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="styles.css">
+ <head>
+  <meta charset="utf-8"/>
+ </head>
+ <body>
+  <h1 id="title">FreeCode Camp Improvement Survey
+  </h1>
+  <p id="description"> Thank you for checking out our survey page. Help us improve FreeCodeCamp.com by giving us your valued opinion.
+  </p>
+ <form id="survey-form"> 
+  <fieldset>
+   <label id="name-label">Name
+    <input required type="text" id="name" placeholder="Please enter your name"></input>
+   </label>
+   <label id="email-label">E-mail
+    <input required type="email" id="email" Placeholder="Please enter your E-mail"></input> 
+   </label>
+   <label class="text" id="number-label">Age (optional)
+    <input id="number" type="number" Placeholder="Please enter your age" min="13" max="120"></input> 
+   </label>
+  </fieldset>
+  <fieldset>
+   <label id="role"> What is your current role?
+     <!-- TODO: CHANGE TEST OPTIONS WITH REAL OPTIONS -->
+    <select id="dropdown">
+      <option value="">(Choose one)</option>
+      <option value="1">Student</option>
+     <option value="2">Full-time job</option>
+     <option value="3">Full-time hobby</option>
+     <option value="4">Other</option>
+     <option value="5">Prefer not to say</option>
+    </select>
+   </label>
+   <fieldset class="spacer"></fieldset>
+    <!-- change name="" of radio pair -->
+   <label id="reccomendation">Would you reccomend FreeCodeCamp to a friend?</label>
+    <label for="Absolutely"> <input class="inline" id="absolutely" name="radio-button" type="radio" value="1"> Absolutely</input></label>
+   <label for="Not a chance"><input class="inline" id="Not a chance" name="radio-button" type="radio" value="2"> Not a chance</input></label>
+   <label for="IDK"><input class="inline" id="IDK" name="radio-button" type="radio" value="3"> IDK</input></label>
+  </fieldset>
+  <fieldset>
+   <label id="improvement">What would you like to see improved?</label>
+   <label><input class="inline" type="checkbox" value="improvement-option"></input>Front-end Projects</label>
+   <label><input class="inline" type="checkbox" value="improvement-option">Back-End Projects</input></label>
+   <label><input class="inline" type="checkbox" value="improvement-option">Data Visualization</input></label>
+   <label><input class="inline" type="checkbox" value="improvement-option">Challenges</input></label>
+   <label><input class="inline" type="checkbox" value="improvement-option">Open Source Community</input></label>
+   <label><input class="inline" type="checkbox" value="improvement-option">Gitter help rooms</input></label>
+   <label><input class="inline" type="checkbox" value="improvement-option">Videos</input></label>
+   <label><input class="inline" type="checkbox" value="improvement-option">City Meetups</input></label>
+   <label><input class="inline" type="checkbox" value="improvement-option">Wiki</input></label>
+   <label><input class="inline" type="checkbox" value="improvement-option">Forum</input></label>
+   <label><input class="inline" type="checkbox" value="improvement-option">Additional Courses</input></label>
+   <fieldset class="spacer"></fieldset>
+   <label id="Comments">Any Additional Comments or Suggestions?</label>
+    <textarea placeholder="You can enter your comments here..."></textarea>
+  </fieldset>
+<!-- TODO: add placeholder text and change font -->
+  <fieldset>
+    <input type="submit" id="submit">
+    </input>
+  </fieldset>
+ </form>
+ </body> 
+</html>
+
