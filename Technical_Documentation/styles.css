@@ -7,12 +7,19 @@ html {
 }
 
 body {
-height: 500vh;
+height: fit-content;
+overflow-x: hidden;
 }
 
-
+img, .img-container {
+  object-fit: scale-down;
+  height: fit-content;
+  width: fit-content;
+}
+ 
 .navigation {
   border-right: 3px solid grey;
+  background-color: antiquewhite;
   position: fixed;
   left: 0; 
   top: 0;
@@ -22,8 +29,13 @@ height: 500vh;
   margin: 0;
   padding: 0;
   display: block;
-  align-items: center;
   overflow: auto;
+}
+
+.navigation div[class="dropdown"] {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .navigation *:not(a) {
@@ -43,11 +55,15 @@ height: 500vh;
   padding: 4px auto;
 }
 
+.navigation input, .navigation .menu-button {
+ display: none;
+}
+
 .navigation header {
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
-  
+  margin-bottom: 0;
 }
 
 .navigation li {
@@ -64,9 +80,15 @@ height: 500vh;
 
 #main-doc {
   float: left;
-  padding-left: clamp(275px, 20vw, 350px); /*This left padding is to offset the content from overlapping the nav bar*/
+  margin-left: clamp(275px, 20vw, 350px); /*This left margin is to offset the content from overlapping the nav bar*/
   margin-top: 50px;
   line-height: 2em;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #main-doc p, #main-doc ul {
@@ -83,36 +105,59 @@ height: 500vh;
 }
 
 #main-doc ul {
-  margin-left: 35px;
+  margin-left: 15px;
 }
 
 ul[id="main-list"] li {
   line-height: 2em;
 }
 
+.passive-tree-img {
+  height: auto;
+  width: 50vw;
+  min-width: 800px;
+}
+
+#Introduction img[src="Bloodmage_Acension_Tree.png"] {
+  width: 450px; /* this rule is to keep that image from being to big and overpowering the document */
+  padding-bottom: 30px
+}
+
+.code-wrap {
+  display: inline-block;
+  width: auto;
+  height: fit-content;
+  border-radius: 10px;
+  border: 2px solid darkgray;
+  background-color: antiquewhite;
+  padding-right: 17px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+
+
+.img-container h1{
+  font-size: 2rem; 
+  text-decoration: underline;
+  margin: 0 0 10px 0;
+}
+
+.img-container .code-wrap {
+  margin-top: 20px;
+  margin-left: 0;
+}
+
 /* Section is for rules that apply to mobile devices for readability */
 
-@media (max-width: 720px) {
-  .navigation {
-    position: absolute;
-    min-width: 100vw;
-    width: 100vw;
-    overflow: hidden;
-  }
-
-  .nav-list {
-    height: 250px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    border: solid 2px grey !important; 
-    max-height: 200px;
-  }
-
+@media (max-width: 1200px) {  
+  
   #navbar header {
     display: block;
     font-size: 2.5em;
-    border: none;
+    border-bottom: 4px solid gray;
     margin: 0;
+    transition: all 0.5s ease-in;
   }
 
   body {
@@ -120,8 +165,82 @@ ul[id="main-list"] li {
   }
 
   #main-doc {
-    padding-left: 0;
+    margin-left: 0;
   }
+  
+  .navigation {
+    position: fixed;
+    min-width: 100vw;
+    width: 100vw;
+    height: fit-content;
+    overflow: hidden;
+    border-right: none;
+  }
+
+  .nav-list {
+    height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: solid 0px transparent;
+    max-height: 200px;
+    transition: all 0.5s ease-in;
+    opacity: 0;
+  }
+
+  .navigation .menu-button {
+    height: 40px;
+    width: 35px;
+    background-color: aliceblue;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    top: -5px;
+    z-index: 1;
+    border-radius: 10px;
+    padding: 7px;
+    margin-left: 0;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: sans-serif;
+    transform: rotate(90deg);
+    user-select: none;
+  }
+
+  .menu-button:hover {
+    cursor: pointer;
+  } 
+    
+  .menu-button:active {
+    box-shadow: inset 0px 0px 10px 4px #5F6D75;
+  }
+
+
+  .hidden:checked + .menu-button {
+    box-shadow: none;
+    box-shadow: inset 0px 0px 20px 4px #5F6D75;
+  }
+
+  #navbar .hidden:checked ~ .nav-list {
+    height: 300px;
+    opacity: 1;
+    border: solid 2px grey !important; 
+  }
+  
+  #navbar .hidden:checked ~ header {
+    border-bottom: transparent;
+  }
+
+
+  .main-section {
+    scroll-margin-top: 100px;
+  }
+  
+img, .img-container {
+  margin: auto;
+}
 
   .section-header {
     text-align: center;

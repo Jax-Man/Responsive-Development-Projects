@@ -8,6 +8,8 @@
  </head>
  <body>
    <nav Class="navigation" id="navbar">
+    <div class="dropdown">
+     <input type="checkbox" class="hidden" id="checkbox-menu"><label class="menu-button" for="checkbox-menu">III</label> 
      <header>BloodStorm Blast</header>
      <ul Class="nav-list">
       <li><a class="nav-link" href="#Introduction">Introduction</a></li>
@@ -18,25 +20,32 @@
       <li><a class="nav-link" href="#Survivability_&_AOE">Survivability & AOE<a></li>
       <li><a class="nav-link" href="#Final_Thoughts">Final Thoughts<a></li>
      </ul>
+    </div>
    </nav>
    <main id="main-doc">
      <section class="main-section" id="Introduction">
        <header class="section-header">Introduction</header>
-       <p> Yo, I'm not gonna lie I've been very wrapped up in the game Path of Exile 2. It is an isometric top-down rpg in the same vein as Grim Dawn, The Diablo series, and Hero Siege (props if you know this one). It takes a more active approach to combat than its predecessor by having a dodge roll, and a huge emphasis on skill expression. This skill expression does not just stop at technical skill though, the challenges the game introduces requires planning out your build step by step. Much more than the average title in this genre.</p>
+       <p> This is a technical documentation on how I built my Witch in, a game I might have been playing too much of, Patch of Exile 2. It is an isometric top-down rpg in the same vein as Grim Dawn, The Diablo series, and Hero Siege (props if you know this one). It takes a more active approach to combat than the predecessors by having a dodge roll not on a lengthy cooldown, and a huge emphasis on skill expression. This skill expression does not just stop at technical skill though, the challenges the game introduces requires planning out your build step by step. Much more than the average title in this genre.</p>
        <p>To iterate on my point just LOOK at how massive the skill tree is</p>
-       <!-- put picture of skill tree here -->
-       <p>Yeah, I know. It's terrifying right? Don't worry, I am making this technical documentation to detail the build I had the most fun with so far. It is none other than the Bloodmage Witch.</p>
-       <!-- put picture of blood ascendancy to see if it flows well -->
-     </section>
+       <div class="img-container">
+         <img class="passive-tree-img" alt="Path of Exile 2 Skill Tree" src="PoE2_Int_tree.png"/>
+       </div>
+       <p>Yeah, I know. I can't even show all of it at once. Don't worry though We'll be focusing on the int pie slice, and the class/ascension none other than the Bloodmage Witch.</p>
+       <div class="img-container">
+         <img alt="Close up of the Bloodmage ascension bubble" src="Bloodmage_Acension_Tree.png"/>
+       </div>
+        </section>
      <section class="main-section" id="What_You_Need_to_Know">
        <header class="section-header" >What You Need to Know</header>
        <p> So, before diving headfirst into what I did with the class and why, I'm going to tell you what your base level of knowledge should be going into this documentation.</p>
        <code>
-         <p>You should know:</p>
-         <ul id="main-list">
-          <li>What an isometric action rpg plays like</li>
-          <li>What Path of exile 2 plays like</li>
-          <li>Path if Exile 2's skill tree</li>
+         <div class="code-wrap">
+          <p>You should know:</p>
+          <ul id="main-list">
+           <li>What an isometric action rpg plays like</li>
+           <li>What Path of exile 2 plays like</li>
+           <li>Path if Exile 2's skill tree</li>
+         </div>
         </ul>
       </code>
         <p>and honestly, thats it. The rest of the guide will be spoilers on PoE 2(Path of Exile 2) and its character progression system. If you want to try PoE 2 out for yourself it has an early access out on Steam and its own webpage and client. I'll get into general overview of a witch next.</p>
@@ -44,62 +53,74 @@
 
      <section class="main-section" id="Class_Overview">
        <header class="section-header" >Class Overview</header>
-       <p>witch is 1 of the 2 Intelligence characters in Poe2 and has a magic skill tree called Occult. The occult tree looks something like this.</p>
-       <!-- add picture of occult tree -->
-       <p>This tree shares a trait with the other full int skill tree, and that is that none of their skills require a weapon to cast. The rest of the classes rely heavily on weapon skills and as such rely on the weapon they are holding. Int casters are much more free to do what they please and, as a trade off, Don't scale damage as high or as easily as other classes.</p>
-       <!-- add picture with caption showing side by side of damage scaling -->
-       <p>This means that you would normally look to utilize the adaptibility of your skills to be a very solid "John Elements" type. Some builds do that... but not this one.</p>
+       <p>witch is one of two full intelligence characters in Poe2, and has her own magic skill tree called Occult. The occult tree looks something like this.</p>
+       <div class="img-container">
+         <img alt="Occult Skill tree" src="Occult_Skill_Tree.png"/>
+       </div>
+       <p>Something Interesting to note, none of the int trees have a weapon requirement to cast. That's because most of the Intelligence "weapons" act like an extra skill. Ranging from Ice Blasts to Corpse Consumption.</p>
+       <p>This in turn makes a lot of int builds focus on elemental damage, and either being Mr.John Elements and utilizing a wide variety or specializing into one single element. This build does neither and INSTEAD does physical damage like no other.</p>
        <p>:]</p>
      </section>
      <section class="main-section" id="Ascendancy_Breakdown">
        <header class="section-header">Ascendancy Breakdown</header>
        <p>Now I'll detail WHY Bloodmage is strong and what the weaknesses you have to watch out for.</p>
-      <p>Weaknesses I've currently gathered are:</p>
+      <p>Starting with weaknesses. In my experience they are:</p>
       <code>
-      <ul>
-        <li>You heavily rely on critting skills and making it consistent</li>
-        <li>Volatile health total, which leads to you not really knowing where your health is at a lot of the time.</li>
-        <li>Main Skill Cast times are really long.</li>
-        <li>Your build is heavy on spirit use. Might require high spirit on armor to optimize.</li>
-      </ul>
-      </code>
-      <p>Those are the biggest ones. Another small point is the lack of mob clearing (If we dont add my secret sauce >:]). We'll cover that later. To stay on topic the list of strengths you get going into bloodmage and witch are:</p>
-      <code>
+       <div class="code-wrap"> 
         <ul>
-         <li>High single target dps output that is very self sufficient.</li>
-         <li>Very High survivability while clearing</li>
-         <li>Very few "required" skills to make the build function</li>
-         <li>High amount of build origionality after main passive nodes.</li>
-       </ul>
+         <li>Heavily relies on critting with skills and making it consistent</li>
+         <li>Aside from one skill. You get very close to enemies and will die to some attacks.</li>
+         <li>Bonestorm Cast times are really long.</li>
+         <li>Your build is heavy on spirit use. Requires high spirit on armor to optimize.</li>
+         <li>Clearing hordes will be hard.(without my secret <i>sauce</i> >:])</li>
+        </ul>
+       </div> 
+      </code>
+      <p>Strengths you get going into Bloodmage ascension and this build are:</p>
+      <code>
+        <div class="code-wrap">
+         <ul>
+           <li>High single target dps output that is also going to help you sustain your health.</li>
+           <li>Very High survivability to any hit that doesn't straight up kill you.</li>
+           <li>Very few "required" skills to make the build function.</li>
+           <li>High amount of build origionality. You can do a lot of your own stuff with this one</li>
+         </ul>
+        </div>
       </code>
       <p>As you can see there are "a lot" of positives. I love this build, and next I'll talk about why the single target damage gets so high. Trust me it is so silly.</p>
      </section>
      <section class="main-section" id="Single_Target_Meltdown">
        <header class="section-header">Single Target Meltdown</header>
        <p>The single target damage comes from literally 1 skill.</p>
-       <!-- Add picture of bonestorm-->
-       <code>
-         <p>Bonestorm</p>
-       </code>
-       <p>Not kidding that's all you need. This skill hits a large number of times; this depends on the amount of time you put in to casting it. An interesting thing to note is after a certain amount of cast time (around 30%) it spans wide and stops getting more concetrated. This means that smaller targets will only ever need small amounts of the cast time to get hit with full value, BUT bosses and bigger hitboxes get absolutely shredded with a full blast. Last thing to note is each projectile hits seperately, and this is huge for statistically guaranteeing a blood orb on each possible cast.</p>
+       <div class="img-container">
+         <code>
+           <h1>Bonestorm</h1>
+         </code>
+         <img alt="Bonestorm Skill at current rank" src="Bonestorm_Lvl14.png" />
+       </div>
+       <p>Not kidding that's all you need. This skill hits a large number of times; this depends on the amount of time you put in to casting it. An interesting thing to note is after a certain amount of cast time (around 30%) it doesn't get more concentrated it just gets wider. This means that smaller targets will need smaller amounts of the cast time to get hit with full value, BUT bosses and bigger hitboxes get absolutely shredded with a full cast. Last thing to note is each projectile hits seperately, and this is huge for statistically guaranteeing a blood orb on each possible cast.</p>
      </section>
      <section class="main-section" id="Survivability_&_AOE">
        <header class="section-header">Survivability & AOE</header>
        <p> Woah this has gotten much longer than I thought it would at the start. In this second to last section I'll quickly go into my own <i>Spice</i> I've put into the build.</p>
-       <p> and here it is:</p>
-       <!-- Add picture of corpse explosion -->
-       <code>
-         <p> Here are a list of the most important Things it solves:</p>
-         <ul>
-          <li>High aoe damage with the Physical damage bonuses</li>
-          <li>Scales with difficulty by doing max health damage</li>
-          <li>Turns any dead elite into an on demand nuke for consistent hordes</li>
-        </ul>
+       <p> which is:</p>
+       <div class="img-container">
+         <img alt="Detonate Dead skill in Occult Tree" src="Detonate_Dead.png"/>
+         <code>
+          <div class="code-wrap">
+           <p> Here are a list of the most important Things it solves:</p>
+           <ul>
+             <li>High aoe damage with the Physical damage bonuses</li>
+             <li>Scales with difficulty by doing max health damage</li>
+             <li>Turns any dead elite into an on demand nuke for consistent hordes</li>
+           </ul>
+          </div> 
+        </div>
        </code>
        </section>
        <section class="main-section" id="Final_Thoughts">
          <header class="section-header">Final Thoughts</header>
-         <p>This build was my first playthrough to end game and I enjoyed it the whole way through. I really struggled at first finding a build for witch I enjoyed, and that is partly because I thought Blood Mage had more minion support. Thinking about any spells with physical damage and seeing Corpse Explosion was such a lightbulb moment for me. I highly reccomend playing with this simple build and adding your own personality to it.</p>
+         <p>This was my first time making an analysis like this and I really enjoyed it. I really struggled at first finding a build for witch I enjoyed, and when I cracked this one on my own it opened up the game for me. Going through all the spells with physical damage and seeing Corpse Explosion was such a lightbulb moment for me. I highly reccomend playing with this simple build and adding your own personality to it.</p>
          <p>Most important part. Have fun. Don't die :^)</p>
        </section>
    </main>
