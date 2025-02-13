@@ -1,0 +1,438 @@
+:root {
+    --jack: gray;
+    --background: rgb(240,234,214);
+    --textcolorlight: white;
+    --darkbackground: #222222;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 67.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overflow-x: hidden;
+    height: fit-content;
+    background-color: var(--background);
+  }
+  
+  h1 { 
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  section {
+    scroll-margin-top: 80px;
+  }
+  
+  a {
+    display: inherit;
+    align-items: center;
+    text-decoration: none;
+    color: initial;
+    height: 100%;
+    width: 100%;
+  }
+  /*Start of animation rules and content*/
+  
+  .pop-in {
+    user-select: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  } /* rule to hide certain elements until hovered */
+  
+  p.project-title.pop-in {
+    text-align: center;
+    color: #006000;
+    font-style: italic;
+  }
+  
+  p.project-title.pop-in:before, p.project-title.pop-in:after {
+      
+    box-sizing: inherit;
+    font-size: 2.3rem;
+    margin-bottom: -10px;
+  }
+  
+  a.project-link:hover p.project-title.pop-in {
+    opacity: 1;
+  }
+  
+  
+  
+  p.project-title.pop-in:before {
+    content: '/* ';
+  }
+  
+  p.project-title.pop-in:after {
+    content: ' */'
+  }
+  
+  /*Start of header and welcome section styling */
+  
+  header {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 15vh;
+    width: 100%;
+    max-height: 75px;
+    display: flex;
+    flex-direction: row;
+    background-color: #820036;
+    font-size: 2rem;
+    box-shadow: 0 4px 2px rgb(35, 35, 35);
+    z-index: 5; /*This is to stop the nav links from overlapping with the project links and crashing the webpage*/
+  }
+  
+  header nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+  }
+  
+  .navigation {
+    height: 100%;
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;  
+    list-style-type: none;
+  }
+  
+  .navigation li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-align: right;
+    padding: 0 25px;
+    margin: auto 0
+  }
+  
+  #welcome-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #welcome-section h2{
+    font-style: italic;
+  }
+  
+  #welcome-section h2, #welcome-section h1 {
+    width: 100%;
+    text-align: center
+  }
+  
+  #welcome-section .jacks {
+    position: absolute;
+    top: 180px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    z-index: -1;
+  }
+  
+  .jacks * {
+    position: absolute;
+  }
+  
+  .ball {
+    background-color: #f94449;
+    height: 25%;
+    width: 25%;
+    border-radius: 50%;
+    left: 22%;
+    top: 5%
+  }
+  
+  .jack {
+    width: 33%;
+    height: 33%;
+  }
+  
+  .two {
+    left: 50%;
+    top: 20%
+  }
+  
+  .three {
+    right: 50%;
+    top: 35%;
+  }
+  
+  .four {
+    right: 0%;
+    bottom: 25%
+  }
+  
+  .j-line {
+    background-color: var(--jack);
+    height: 10px;
+    width: 75%;
+    border-radius: 50%;
+  }
+  
+  .jack .j-line:nth-of-type(1) {
+    transform-origin: left;
+    transform: rotate(45deg);
+  }
+  
+  .jack .j-line:nth-of-type(2) {
+    transform-origin: right;
+    transform: rotate(-45deg);
+    right: 45%;
+  }
+  
+  .j-end {
+    background-color: var(--jack);
+    height: 15%;
+    width: 15%;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .bl {
+    left: -1%;
+    bottom: 40%;
+  }
+  
+  .tr {
+    top: 0%;
+    right: 40%;
+  }
+  
+  
+  
+  /* start of grid with projects section */
+  
+  .projects {
+    height: fit-content;
+    width: 100%;
+    Display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    background: linear-gradient( var(--background), 20%, var(--jack), 80%, var(--darkbackground) );
+  }
+  
+  .projects h2 {
+    text-decoration: underline;
+    width: auto;
+  }
+  
+  .grid {
+    width: auto;
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .project-tile {
+    Background: linear-gradient( var(--background), var(--jack) 40%);
+    border-radius: 5%;
+    box-shadow: 20px 16px 16px rgb(35, 35, 35);
+  }
+  
+  
+  
+  .project-tile, .project-tile a {
+    width: 450px;
+    height: 500px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+  }
+  
+  .project-tile:last-of-type {
+    grid-column-end: span 3;
+    background: unset;
+    background: linear-gradient(var(--jack), 60%, var(--darkbackground));
+  }
+  
+  .project-tile:last-of-type p:not(.pop-in) {
+    color: var(--textcolorlight);
+  }
+  
+  .project-tile:last-of-type p.pop-in {
+    color: #009000;
+  }
+  
+  .project-tile .project-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: 10%;
+    margin-top: 10px;
+    border-radius: 5%;
+  }
+  
+  .project-title {
+    font-size: 2rem;
+    padding-top: 10px;
+  }
+  
+  /* start of contact section */
+  
+  section.contact-me {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--darkbackground);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  section.contact-me .contact-text {
+    color: var(--textcolorlight);
+    align-items: center;
+    text-align: center;
+  }
+  
+  section.contact-me h1{
+    font-weight: 900;
+    font-size: 5rem;
+  }
+  
+  section.contact-me h2{
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  div.contact-media {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  div.contact-icon {
+    overflow: visible;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 15px auto;
+    height: 50px;
+    width: 50px;
+  }
+  
+  i.fa-brands {
+    font-size: 50px;
+  }
+  
+  a#profile-link {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  
+  a#profile-link:hover p.pop-in {
+    opacity: 1;
+  }
+  
+  p.pop-in.WIP {
+    user-select: none;
+    opacity: 0;
+    height: fit-content;
+    width: fit-content;
+    text-wrap: nowrap;
+    position: relative;
+    background: var(--background);
+    margin-bottom: 5px;
+    padding: 6px 10px;
+    border-radius: 5px 5px 5px 5px;
+    border: 2px solid var(--jack);
+    font-size: 2.5rem;
+  }
+  
+  p.pop-in.WIP:after {
+    content: '';
+    position: absolute;
+    border: 20px solid transparent;
+    border-top-color: var(--background);
+    right: 45.4%;
+    bottom: -92%;
+  } 
+  
+  p.pop-in.WIP:before {
+    overflow: visible;
+    content: '';
+    position: absolute;
+    border: 22px solid transparent;
+    border-top-color: var(--jack);
+    right: 45%;
+    bottom: -105%;
+  }
+  
+  /* 
+  i.fa-brands {
+    content: "H";
+    height: auto;
+    width: auto;
+    color: var(--textcolorlight);
+  }  Will Expand on this when I host it on github */
+  
+  /*Start of footer styling*/
+  
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    background-color: var(--darkbackground)
+  }
+  
+  footer p {
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: var(--textcolorlight);
+  }
+  
+  
+  
+  /*Start of Responsive Sizing*/
+  @media screen and (max-width: 1455px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .project-tile:nth-of-type(3) {
+      background: linear-gradient(var(--jack), 60%, var(--darkbackground));
+    }
+  
+    .project-tile:nth-of-type(3) p {
+      color: var(--textcolorlight);
+    }
+  
+      .project-tile:nth-of-type(3) p.pop-in {
+      color: #009000;
+    }
+  
+    .project-tile:last-of-type {
+      grid-column-end: unset;
+    }
+    
+  } 
